@@ -45,7 +45,7 @@ body {
     var(--main-color),
     var(--main-color)
   );
-  /* 元素变换的基点（transform origin）为元素的右下角。当应用变换（如旋转、缩放等）时，元素会围绕这个基点进行变换。 */
+  /* 元素变换的基点（transform origin）为元素的右下角。当应用变换（如旋转、缩放等）时，元素会围绕这个基点进行变换。 请详见下方animate中的transform设置的属性值，会根据这个基点进行变换*/
   transform-origin: bottom right;
   animation: animate 6s linear infinite;
 }
