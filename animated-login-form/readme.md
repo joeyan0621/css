@@ -30,3 +30,8 @@ animation-delay: -3s;
   }
 }
 ```
+
+## 备注：mac 下生成 gif 的方式
+
+使用 QT Player 录制，然后使用 ffmpeg 压缩
+`ffmpeg -i file.mov -r 15 file.gif`
