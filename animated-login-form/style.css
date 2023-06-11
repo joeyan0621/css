@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-  --main-bg-color: #23242a;
-  --box-bg-color: #1c1c1c;
-  --line-main-color: #45f3ff;
-  --line-second-color: #d9138a;
-  --form-bg-color: #28292d;
+  --main-bg: #23242a;
+  --box-bg: #1c1c1c;
+  --main-color: #45f3ff;
+  --second-color: #d9138a;
+  --form-bg: #28292d;
   --font-color: #8f8f8f;
 }
 * {
@@ -18,7 +18,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--main-bg-color);
+  background: var(--main-bg);
 }
 
 .box,
@@ -26,7 +26,7 @@ body {
   position: relative;
   width: 370px;
   height: 450px;
-  background: var(--box-bg-color);
+  background: var(--box-bg);
   border-radius: 50px 5px;
   overflow: hidden;
   margin: 30px;
@@ -42,9 +42,10 @@ body {
   background: linear-gradient(
     60deg,
     transparent,
-    var(--line-main-color),
-    var(--line-main-color)
+    var(--main-color),
+    var(--main-color)
   );
+  /* 元素变换的基点（transform origin）为元素的右下角。当应用变换（如旋转、缩放等）时，元素会围绕这个基点进行变换。 */
   transform-origin: bottom right;
   animation: animate 6s linear infinite;
 }
@@ -58,8 +59,8 @@ body {
   background: linear-gradient(
     60deg,
     transparent,
-    var(--line-second-color),
-    var(--line-second-color)
+    var(--second-color),
+    var(--second-color)
   );
   transform-origin: bottom right;
   animation: animate 6s linear infinite;
@@ -78,7 +79,7 @@ form {
   position: absolute;
   inset: 2px;
   border-radius: 50px 5px;
-  background: var(--form-bg-color);
+  background: var(--form-bg);
   z-index: 10;
   padding: 30px 30px;
   display: flex;
@@ -88,7 +89,7 @@ h2 {
   font-size: 35px;
   font-weight: 500;
   text-align: center;
-  color: var(--line-main-color);
+  color: var(--main-color);
 }
 
 .inputBox {
@@ -103,7 +104,7 @@ h2 {
   background: transparent;
   border: none;
   outline: none;
-  color: var(--main-bg-color);
+  color: var(--main-bg);
   font-size: 1em;
   letter-spacing: 0.05em;
   z-index: 10;
@@ -113,7 +114,7 @@ input[type="submit"] {
   font-size: 20px;
   border: none;
   outline: none;
-  background: var(--line-main-color);
+  background: var(--main-color);
   padding: 5px;
   margin-top: 40px;
   border-radius: 90px;
@@ -121,11 +122,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 input[type="submit"]:active {
-  background: linear-gradient(
-    90deg,
-    var(--line-main-color),
-    var(--line-second-color)
-  );
+  background: linear-gradient(90deg, var(--main-color), var(--second-color));
   opacity: 0.8;
 }
 
@@ -142,7 +139,7 @@ input[type="submit"]:active {
 
 .inputBox input:valid ~ span,
 .inputBox input:focus ~ span {
-  color: var(--line-main-color);
+  color: var(--main-color);
   font-size: 0.75em;
   transform: translateX(-10px) translateY(-30px);
 }
@@ -151,7 +148,7 @@ input[type="submit"]:active {
   left: 0;
   bottom: 0;
   width: 100%;
-  background: var(--line-main-color);
+  background: var(--main-color);
   height: 2px;
   border-radius: 4px;
   transition: 0.5s;
@@ -176,7 +173,7 @@ input[type="submit"]:active {
 
 .links a:hover,
 .links a:nth-child(2) {
-  color: var(--line-main-color);
+  color: var(--main-color);
 }
 .links a:nth-child(2):hover {
   text-decoration: underline 2px;
@@ -193,15 +190,15 @@ input[type="submit"]:active {
   /* height: 450px; */
   background: linear-gradient(
     180deg,
-    var(--line-second-color) 30%,
-    var(--form-bg-color) 70%
+    var(--second-color) 30%,
+    var(--form-bg) 70%
   );
 }
 
 .content {
   position: absolute;
   inset: 2px;
-  background: var(--form-bg-color);
+  background: var(--form-bg);
   border-radius: 50px 5px;
   z-index: 10;
 }
